@@ -7,6 +7,10 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/CodeLeom/quiz_app"
+  },
   "keywords": [
     "quiz application",
     "javascript",
@@ -14,5 +18,9 @@
     "css"
   ],
   "author": "ayodele leom",
-  "license": "ISC"
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/CodeLeom/quiz_app/issues"
+  },
+  "homepage": "https://github.com/CodeLeom/quiz_app#readme"
 }
