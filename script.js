@@ -14,7 +14,42 @@ const questions = [
         question: "Who is your guy? According to the song",
         answers: ["Aishat", "Ayo", "Spyro", "idgaf"],
         correct: 2
-    }
+    },
+    {
+        question: "Who invented JavaScript?",
+        answers: ["Brendan Eich", "Yukihiro Matsumoto", "Larry Wall", "Guido Van Rossum"],
+        correct: 1
+    },
+    {
+        question: "What is the name of our facilitator?",
+        answers: ["Hakeem Owolabi", "Chizaram Anisimuo", "Kyenpya Gutap", "Ayodele Aransiola"],
+        correct: 4
+    },
+    {
+        question: "When was ES6 officially released?",
+        answers: ["May 2009", "June 2015", "December 1995", "March 2000"],
+        correct: 2
+    },
+    {
+        question: "Which of the following is not built on JavaScript?",
+        answers: ["ReactJS", "AngularJS", "Perl", "NodeJS"],
+        correct: 3
+    },
+    {
+        question: "The following are tools for debugging except?",
+        answers: ["Console Statements", "Browser Developer Tools", "Node.js Inspector", "Alert Window"],
+        correct: 4
+    },
+    {
+        question: "All these are not code editors except?",
+        answers: ["JSBiddle", "Atom", "Sublime", "VimEmacs"],
+        correct: 2
+    },
+    {
+        question: "What do you call using Javascript to manipulate HTML and CSS code?",
+        answers: ["Dom Manipulation", "HTML Manipulation", "Markdown Language", "Frontend"],
+        correct: 1
+    },
 ]
 
 // default value
