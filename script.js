@@ -112,7 +112,7 @@ function displayQuestion() {
     )
     .join('');
 
-  // assign the mapped item (answeroptions) into the div of options
+  // assign the mapped item (answeroptions) into the div "options"
   document.getElementById('options').innerHTML = answerOptions;
 }
 
@@ -148,6 +148,9 @@ document.getElementById('next').addEventListener('click', () => {
     progressContainer.style.display = 'block';
     track.style.display = 'block';
     track.innerHTML = `Completed <span>${newQuestion}</span> out of <span>${questions.length}</span> questions.`;
+    
+    //disable the button until an option is selected
+    document.getElementById('next').disabled = true;
   }
   if (newQuestion === questions.length) {
     document.getElementById('options').innerHTML = `<span class="complete">Quiz Completed</span>`
@@ -164,7 +167,7 @@ function showScores() {
   document.getElementById('next').disabled = true;
   document.getElementById(
     'result'
-  ).innerHTML = `<p>Your Total Score is: ${score}/${questions.length}</p>`;
+  ).innerHTML = `<p>${userName}, your Total Score is: ${score}/${questions.length}</p>`;
   tryAgain.style.display = 'block';
   tryAgain.innerText = `Try Again`;
   let result = score/questions.length * 100;
