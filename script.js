@@ -1,9 +1,11 @@
+// // a prompt message for the user to input his or her name
+// prompt('Please enter your name');
 // dummy questions
 const questions = [
     {
-        question: "What is the capital city of Nigeria",
-        answers: ["Lagos", "Abia", "Portharcourt", "Abuja"],
-        correct: 3
+        question: "what is the capital city of cameroon",
+        answers: ["Douala", "Yaounde", "Buea", "Bamenda"],
+        correct: 1
     },
     {
         question: "What is the full meaning of Lmao",
@@ -14,6 +16,41 @@ const questions = [
         question: "Who is your guy? According to the song",
         answers: ["Aishat", "Ayo", "Spyro", "idgaf"],
         correct: 2
+    },
+    {
+        question: "What is the full meaning of DOM?",
+        answers: ["Document Object Memory", "Delivery Object Market", "Document Object model"],
+        correct: 2
+    },
+    {
+        question: "What is the full meaning of OOP?",
+        answers: ["Object Oriented Paradigm", "Object Oriented Programing", "Object Oriented Procedure"],
+        correct: 1
+    },
+    {
+        question: "The following are examples of programing languages except",
+        answers: ["JavaScript", "Python", "C++", "Html"],
+        correct: 3
+    },
+    {
+        question: "what is the full meaning of RAM",
+        answers: ["Read Access Memory", "Random Access Memory", "Read All Memory"],
+        correct: 1
+    },
+    {
+        question: "What is the full meaing of pm used in time",
+        answers: ["past mid day", "post Mean Time", "post meridiem"],
+        correct: 2
+    },
+    {
+        question: "who is the father of Christmas",
+        answers: ["Santa Claus", "the Grinch" , "Frost", "the Easter bunny"],
+        correct: 0
+    },
+    {
+        question: "which company owns of Teams app",
+        answers: ["Google", "Microsoft", "Apple", "Amazon"],
+        correct: 1
     }
 ]
 
@@ -38,6 +75,7 @@ function displayQuestion(){
     document.getElementById('options').innerHTML = answerOptions
 }
 
+
 // check if the selected option is correct and enable the 
 // button to go to the next question and score the user if correct
 function selectAnswer(index){
@@ -57,6 +95,15 @@ document.getElementById('next').addEventListener('click', () =>{
         document.getElementById('result').innerHTML = `<p>Your Total Score is: ${score}/${questions.length}</p>`
     }
 })
-
 // invoke the display question function
 displayQuestion()
+
+
+// function displayMessage(){
+//     document.getElementById('next').addEventListener('click,' () =>{
+//         if(score < questions.length)
+
+//     })
+
+// }
+
