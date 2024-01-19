@@ -1,6 +1,6 @@
 {
   "name": "quiz_app",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "a basic quiz application",
   "main": "index.js",
   "type": "module",
