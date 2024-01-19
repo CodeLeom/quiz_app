@@ -161,7 +161,19 @@ function showScores() {
   ).innerHTML = `<p>Your Total Score is: ${score}/${questions.length}</p>`;
   tryAgain.style.display = 'block';
   tryAgain.innerText = `Try Again`;
+  let result = score/questions.length * 100;
+  if (result < 50) {
+    alert(`You Scored ${result}%. Try Again. You've got this 💪`)
+  } if (result < 70) {
+    alert(`You Scored ${result}%. Good! But you can do so much better! 👍`)
+  } else {
+    alert(`You Scored ${result}%. Great Job! You are a genuis. Well done!!! 🌟✨🏆`)
+  }
 }
+
+tryAgain.addEventListener('click', () => {
+  window.location.reload();
+})
 
 // invoke the display question function
 displayQuestion();
