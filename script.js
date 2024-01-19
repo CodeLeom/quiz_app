@@ -80,12 +80,13 @@ const questions = [
 
 // default value
 let currQuestion = 0;
-let newQuestion = 1;
+let newQuestion = 0;
 let score = 0;
 let progress = 0;
 let track = document.querySelector('#track_questions');
 const progressBar = document.getElementById('progress-bar');
 const progressContainer = document.querySelector('.progress_container');
+const tryAgain = document.getElementById('try_again');
 
 function displayQuestion() {
   // get the element of question and assign it to the questions in the array
@@ -136,16 +137,17 @@ function selectAnswer(index) {
 // go to the next question and if no more question, display the answer
 document.getElementById('next').addEventListener('click', () => {
   currQuestion++;
-  ++newQuestion;
+  newQuestion++;
   if (currQuestion < questions.length) {
     displayQuestion();
     updateProgressBar();
-    track.style.display = 'block';
     progressContainer.style.display = 'block';
-  } if (currQuestion === questions.length - 1) {
-    document.getElementById('next').innerText = 'Check Scores';
+    track.style.display = 'block';
+    track.innerHTML = `Completed <span>${newQuestion}</span> out of <span>${questions.length}</span> questions.`;
   }
   if (newQuestion === questions.length) {
+    track.innerHTML = `Completed <span>${newQuestion}</span> out of <span>${questions.length}</span> questions.`;
+    document.getElementById('next').innerText = 'Check Your Score';
     progressBar.style.width = 100 + '%';
     document.getElementById('next').removeEventListener('click', showScores);
     document.getElementById('next').addEventListener('click', showScores);
@@ -157,6 +159,8 @@ function showScores() {
   document.getElementById(
     'result'
   ).innerHTML = `<p>Your Total Score is: ${score}/${questions.length}</p>`;
+  tryAgain.style.display = 'block';
+  tryAgain.innerText = `Try Again`;
 }
 
 // invoke the display question function

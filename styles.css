@@ -91,3 +91,8 @@ span {
     margin: 10px auto;
     border-radius: 100px;
 }
+
+.hidden {
+    display: none;
+    margin: 0 auto;
+}
