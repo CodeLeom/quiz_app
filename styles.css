@@ -64,3 +64,30 @@ body {
     background-color: #999;
     cursor: no-drop;
 }
+
+.track_questions {
+    margin-top: 10px;
+    font-size: 14px;
+    color: rgb(139, 16, 57);
+}
+
+span {
+    font-size: 16px;
+    font-weight: bold;
+}
+
+#progress-bar {
+    width: 0;
+    height: 10px;
+    background-color: rgb(219, 53, 109);
+    font-size: 12px;
+    border-radius: 100px;
+}
+
+.progress_container {
+    width: 80%;
+    background-color: beige;
+    height: 10px;
+    margin: 10px auto;
+    border-radius: 100px;
+}
