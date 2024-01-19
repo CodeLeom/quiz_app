@@ -78,6 +78,9 @@ const questions = [
   },
 ];
 
+// Get the user name
+let userName = (prompt('Please enter your name:'));
+
 // default value
 let currQuestion = 0;
 let newQuestion = 0;
@@ -93,8 +96,8 @@ function displayQuestion() {
   document.getElementById('question').innerText =
     questions[currQuestion].question;
 
+  // this is to show the question progress
   track.innerHTML = `Completed <span>${newQuestion}</span> out of <span>${questions.length}</span> questions.`;
-
   track.style.display = 'none';
   progressContainer.style.display = 'none';
 
@@ -113,6 +116,7 @@ function displayQuestion() {
   document.getElementById('options').innerHTML = answerOptions;
 }
 
+// progress bar to show the progress of user's responses
 function updateProgressBar() {
   progress += 10;
   progressBar.style.width = progress + '%';
@@ -146,6 +150,7 @@ document.getElementById('next').addEventListener('click', () => {
     track.innerHTML = `Completed <span>${newQuestion}</span> out of <span>${questions.length}</span> questions.`;
   }
   if (newQuestion === questions.length) {
+    document.getElementById('options').innerHTML = `<span class="complete">Quiz Completed</span>`
     track.innerHTML = `Completed <span>${newQuestion}</span> out of <span>${questions.length}</span> questions.`;
     document.getElementById('next').innerText = 'Check Your Score';
     progressBar.style.width = 100 + '%';
@@ -154,6 +159,7 @@ document.getElementById('next').addEventListener('click', () => {
   }
 });
 
+// this is to show the scores when the Check Your Scores button is clicked
 function showScores() {
   document.getElementById('next').disabled = true;
   document.getElementById(
@@ -162,15 +168,18 @@ function showScores() {
   tryAgain.style.display = 'block';
   tryAgain.innerText = `Try Again`;
   let result = score/questions.length * 100;
+
+  // alert window displays the user's score in percentage
   if (result < 50) {
-    alert(`You Scored ${result}%. Try Again. You've got this 💪`)
-  } if (result < 70) {
-    alert(`You Scored ${result}%. Good! But you can do so much better! 👍`)
-  } else {
-    alert(`You Scored ${result}%. Great Job! You are a genuis. Well done!!! 🌟✨🏆`)
+    alert(`${userName}, you Scored ${result}%. Try Again. You've got this 💪`)
+  } if (result >= 50 && result <= 69) {
+    alert(`${userName}, you Scored ${result}%. Good! But you can do so much better! 👍`)
+  } if (result >= 70 && result <= 100) {
+    alert(`${userName}, you Scored ${result}%. Great Job! You are a genuis. Well done!!! 🌟✨🏆`)
   }
 }
 
+// when the try again button is clicked
 tryAgain.addEventListener('click', () => {
   window.location.reload();
 })

@@ -96,3 +96,9 @@ span {
     display: none;
     margin: 0 auto;
 }
+
+.complete {
+    width: 80%;
+    height: 50%;
+    color:rgb(139, 16, 57);
+}
