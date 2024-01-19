@@ -68,7 +68,7 @@ body {
 .track_questions {
     margin-top: 10px;
     font-size: 14px;
-    color: rgb(139, 16, 57);
+    color: rgba(16, 91, 229, 0.86);;
 }
 
 span {
@@ -79,14 +79,14 @@ span {
 #progress-bar {
     width: 0;
     height: 10px;
-    background-color: rgb(219, 53, 109);
+    background-color: rgba(16, 91, 229, 0.86);;
     font-size: 12px;
     border-radius: 100px;
 }
 
 .progress_container {
     width: 80%;
-    background-color: beige;
+    background-color: cornflowerblue;
     height: 10px;
     margin: 10px auto;
     border-radius: 100px;
@@ -100,5 +100,5 @@ span {
 .complete {
     width: 80%;
     height: 50%;
-    color:rgb(139, 16, 57);
+    color:rgba(16, 91, 229, 0.86);
 }
