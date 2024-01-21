@@ -1,3 +1,7 @@
+var name = prompt('Please enter your name');
+if(name===''){
+ window.stop();
+}
 // // a prompt message for the user to input his or her name
 // prompt('Please enter your name');
 // dummy questions
@@ -85,6 +89,7 @@ function selectAnswer(index){
     document.getElementById('next').disabled = false
 }
 
+
 // go to the next question and if no more question, display the answer
 document.getElementById('next').addEventListener('click', () =>{
     currQuestion++
@@ -92,12 +97,23 @@ document.getElementById('next').addEventListener('click', () =>{
         displayQuestion();
         document.getElementById('next').disabled = true
     } else {
-        document.getElementById('result').innerHTML = `<p>Your Total Score is: ${score}/${questions.length}</p>`
+        document.getElementById('result').innerHTML = name + `<p>Your Total Score is: ${score}/${questions.length}</p>`
     }
 })
-// invoke the display question function
-displayQuestion()
 
+// invoke the display question function
+
+displayQuestion();
+
+// this didnt work
+function displayScore (name, score){ 
+    if (score > 7){
+    console.log(name + ", You are superb");
+} else {
+    console.log(name + ", You can do better");
+}
+}
+displayScore(name, score); 
 
 // function displayMessage(){
 //     document.getElementById('next').addEventListener('click,' () =>{
