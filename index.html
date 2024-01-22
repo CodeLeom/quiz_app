@@ -1,32 +1,42 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Simple Quiz Application</title>
     <!-- begining of google font code -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Rokkitt:wght@200;500;700;900&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Rokkitt:wght@200;500;700;900&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap"
+      rel="stylesheet"
+    />
     <!-- end of google font code -->
-    <link rel="stylesheet" href="styles.css">
-</head>
-<body>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
     <h1 class="title">Simple Quiz Application</h1>
 
     <div class="container">
-        <div id="question">Question is loading...</div> <!-- this is for the question -->
+      <div id="progress"></div>
+      <!-- this is to display question progress -->
 
-        <div id="options"></div> <!-- this is for the options -->
+      <div id="question">Question is loading...</div>
+      <!-- this is for the question -->
 
-        <button class="btn" id="next" disabled>Next</button> <!-- this is to go to the next question -->
-        
-        <div id="result">
-            
-        </div> <!-- this is to display the result -->
+      <div id="options"></div>
+      <!-- this is for the options -->
+
+      <button class="btn" id="next" disabled>Next</button>
+      <!-- this is to go to the next question -->
+
+      <div id="result"></div>
+      <!-- this is to display the result -->
+
+      <div class="btn" id="back">Back</div>
+      <!-- this is to go to the first question -->
     </div>
 
-
     <script src="script.js"></script>
-</body>
+  </body>
 </html>
