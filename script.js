@@ -23,23 +23,23 @@ const questions = [
     correct: 2,
   },
   {
-    question: "Who is your guy? According to the song",
-    answers: ["Aishat", "Ayo", "Spyro", "idgaf"],
-    correct: 2,
+    question: "Who is American President?",
+    answers: ["Joe Biden", "Harris", "Mr. Bean", "Donald Trump"],
+    correct: 0,
   },
   {
-    question: "Who is your guy? According to the song",
-    answers: ["Aishat", "Ayo", "Spyro", "idgaf"],
-    correct: 2,
+    question: "The iconic bird App was changed to?",
+    answers: ["Twitter", "Musk😑", "Spyro", "X"],
+    correct: 3,
   },
   {
-    question: "Who is your guy? According to the song",
-    answers: ["Aishat", "Ayo", "Spyro", "idgaf"],
-    correct: 2,
+    question: "Who is more superior in the following Titans",
+    answers: ["🐕 Scoobie Doo", "🦍 King Kong", "🦋 Mothra", "🦕 Godzilla"],
+    correct: 3,
   },
   {
-    question: "Who is your guy? According to the song",
-    answers: ["Aishat", "Ayo", "Spyro", "idgaf"],
+    question: "The richest Marvel character here is...",
+    answers: ["Oreoluwa😂", "Thor💪🏼", "Iron Man❤", "Vision"],
     correct: 2,
   },
   {
@@ -49,12 +49,12 @@ const questions = [
   },
   {
     question: "Which of these animals is the slowest",
-    answers: ["sea lion", "turtle", "ssnake", "crawling lion"],
+    answers: ["sea lion", "turtle", "ssnake", "crawling lion😂"],
     correct: 1,
   },
   {
     question: "Who created this app?",
-    answers: ["Bill Gates", "Bat", "Betty", "idgaf"],
+    answers: ["Bill Gates", "Bat", "Betty😁", "idgaf"],
     correct: 2,
   },
 ];
@@ -62,6 +62,8 @@ const questions = [
 // default value
 let currQuestion = 0;
 let score = 0;
+const nextButton = document.getElementById("next");
+const backButton = document.getElementById("back");
 
 function displayQuestion() {
   // get the element of question and assign it to the questions in the array
@@ -95,34 +97,34 @@ function selectAnswer(index) {
   if (index === questions[currQuestion].correct) {
     score++;
   }
-  document.getElementById("next").disabled = false;
+  nextButton.disabled = false;
 }
 
 // Result message
 function result() {
   document.getElementById("progress").style.display = "none";
   document.getElementById("options").style.display = "none";
-  document.getElementById("next").style.display = "none";
+  nextButton.style.display = "none";
   document.getElementById("question").style.display = "none";
-  document.getElementById("back").style.display = "block";
+  backButton.style.display = "block";
 
   let totalScore = score;
+  let resultMessage = "";
+
   if (totalScore > 6) {
-    document.getElementById(
-      "result"
-    ).innerHTML = `<p>${playerName} you are superb! total Score is: ${score}/${questions.length}</p>`;
+    resultMessage = `<p>${playerName} you are superb!🎉 Your total score is: ${score}/${questions.length}</p>`;
+    backButton.innerHTML = "<p> Back </p>";
   } else {
-    document.getElementById(
-      "result"
-    ).innerHTML = `<p>${playerName} try harder, you've got this! total Score is: ${score}/${questions.length}</p>`;
+    resultMessage = `<p>${playerName} try harder 😌, you've got this! Your total Score is: ${score}/${questions.length}</p>`;
+    backButton.innerHTML = "<p>Retry the quiz</p>";
   }
 
-  document.getElementById("back").addEventListener("click", () => {
-    displayQuestion();
-  });
+  document.getElementById("result").innerHTML = resultMessage;
+  document.getElementById("result").style.display = "block";
 }
-// go to the next question and if no more question, display the answer
-document.getElementById("next").addEventListener("click", () => {
+
+// go to the next question and if no more question, display the result
+nextButton.addEventListener("click", () => {
   currQuestion++;
   if (currQuestion < questions.length) {
     displayQuestion();
@@ -141,8 +143,28 @@ document.getElementById("next").addEventListener("click", () => {
     ).innerHTML = `<p>${questionNum} of ${questions.length}</p>`;
   } else {
     document.getElementById("progress").innerHTML = "<p> Last question! </p>";
-    document.getElementById("next").innerHTML = "<p> Check your Score </p>";
+    nextButton.innerHTML = "<p> Check your Score </p>";
+    nextButton.style.padding = "10px";
   }
+});
+
+// Going back or retrying the quiz
+backButton.addEventListener("click", () => {
+  currQuestion = 0;
+  score = 0;
+  questionNum = 1;
+  document.getElementById(
+    "progress"
+  ).innerHTML = `<p>${questionNum}/${questions.length}</p>`;
+  displayQuestion();
+  document.getElementById("result").style.display = "none";
+  document.getElementById("progress").style.display = "block";
+  document.getElementById("question").style.display = "block";
+  document.getElementById("options").style.display = "block";
+  backButton.style.display = "none";
+  nextButton.style = "display: block; margin: 0 auto; padding: 5px 20px;";
+  nextButton.innerHTML = "<p> Next </p>";
+  nextButton.disabled = true;
 });
 
 // invoke the display question function

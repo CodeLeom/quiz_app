@@ -9,7 +9,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/CodeLeom/quiz_app"
+    "url": "git+https://github.com/BettyAfolabi/quiz_app"
   },
   "keywords": [
     "quiz application",
@@ -17,10 +17,10 @@
     "html",
     "css"
   ],
-  "author": "ayodele leom",
+  "author": "Betty Afolabi",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/CodeLeom/quiz_app/issues"
+    "url": "https://github.com/BettyAfolabi/quiz_app/issues"
   },
-  "homepage": "https://github.com/CodeLeom/quiz_app#readme"
+  "homepage": "https://github.com/BettyAfolabi/quiz_app#readme"
 }
