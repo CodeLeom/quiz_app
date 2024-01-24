@@ -1,9 +1,11 @@
+// // a prompt message for the user to input his or her name
+// prompt('Please enter your name');
+// if no user name is inputed, the page should not load
 var name = prompt('Please enter your name');
 if(name===''){
  window.stop();
 }
-// // a prompt message for the user to input his or her name
-// prompt('Please enter your name');
+
 // dummy questions
 const questions = [
     {
@@ -61,7 +63,7 @@ const questions = [
 // default value
 let currQuestion = 0
 let score = 0
-
+let totalQuestions = 10;
 
 function displayQuestion(){
     // get the element of question and assign it to the questions in the array
@@ -78,8 +80,6 @@ function displayQuestion(){
     // assign the mapped item (answeroptions) into the div of options
     document.getElementById('options').innerHTML = answerOptions
 }
-
-
 // check if the selected option is correct and enable the 
 // button to go to the next question and score the user if correct
 function selectAnswer(index){
@@ -105,6 +105,16 @@ document.getElementById('next').addEventListener('click', () =>{
 
 displayQuestion();
 
+function displayProgress(currQuestion, totalQuestions){
+    document.getElementById("progress").innerHTML = "question " + currQuestion + " of " + totalQuestions
+    //     if(currQuestion < totalQuestions){
+    //     currQuestion++;
+    //     displayProgress();
+    // }
+}
+displayProgress(1, 10);
+
+
 // this didnt work
 function displayScore (name, score){ 
     if (score > 7){
@@ -113,7 +123,7 @@ function displayScore (name, score){
     console.log(name + ", You can do better");
 }
 }
-displayScore(name, score); 
+displayScore(); 
 
 // function displayMessage(){
 //     document.getElementById('next').addEventListener('click,' () =>{
