@@ -1,7 +1,7 @@
 // // a prompt message for the user to input his or her name
 // prompt('Please enter your name');
 // if no user name is inputed, the page should not load
-var name = prompt('Please enter your name');
+let name = prompt('Please enter your name');
 if(name===''){
  window.stop();
 }
@@ -118,12 +118,12 @@ displayProgress(1, 10);
 // this didnt work
 function displayScore (name, score){ 
     if (score > 7){
-    console.log(name + ", You are superb");
+        document.getElementById('result').innerHTML = name + ", You are superb"
 } else {
-    console.log(name + ", You can do better");
+    document.getElementById('result').innerHTML = name + ", You can do better"
 }
 }
-displayScore(); 
+displayScore(name, score); 
 
 // function displayMessage(){
 //     document.getElementById('next').addEventListener('click,' () =>{
