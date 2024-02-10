@@ -92,9 +92,6 @@ function displayQuestion() {
   // iterate the answers array and get their value and index to display on the option div
   const answerOptions = answers
     .map(
-      // !BUG next button still works even when answer button losses focus
-      // TODO add handler to disable next button when no answer is selected
-
       (answer, index) =>
         `<button class="option" onclick=selectAnswer(${index})>${answer}</button>`
     )
@@ -142,7 +139,7 @@ function displayProgress(currQuestion, totalQuestions) {
 }
 displayProgress(currQuestionReadable, questions.length);
 
-// this didnt work
+
 function displayScore(name, score, questionsLength) {
   if (score > 7) {
     document.getElementById("result").innerHTML =
@@ -160,3 +157,7 @@ function displayScore(name, score, questionsLength) {
       questionsLength;
   }
 }
+
+
+   // !BUG next button still works even when answer button losses focus
+   // TODO add handler to disable next button when no answer is selected
