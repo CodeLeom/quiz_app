@@ -17,6 +17,21 @@ const questions = [
       "Laughing my a** off",
       "wo, e no get meaning",
       "omo!!!",
+],
+      correct: 1,
+  },
+    {
+    question: 'What is the capital city of Nigeria',
+    answers: ['Lagos', 'Abia', 'Portharcourt', 'Abuja'],
+    correct: 3,
+  },
+  {
+    question: 'What is the full meaning of Lmao',
+    answers: [
+      'Lmao na 😂',
+      'Laughing my a** off',
+      'wo, e no get meaning',
+      'omo!!!',
     ],
     correct: 1,
   },
@@ -100,6 +115,7 @@ function displayQuestion() {
   // assign the mapped item (answeroptions) into the div of options
   document.getElementById("options").innerHTML = answerOptions;
 }
+
 // check if the selected option is correct and enable the
 // button to go to the next question and score the user if correct
 function selectAnswer(index) {
@@ -138,7 +154,6 @@ function displayProgress(currQuestion, totalQuestions) {
   // }
 }
 displayProgress(currQuestionReadable, questions.length);
-
 
 function displayScore(name, score, questionsLength) {
   if (score > 7) {

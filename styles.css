@@ -64,3 +64,41 @@ body {
     background-color: #999;
     cursor: no-drop;
 }
+
+.track_questions {
+    margin-top: 10px;
+    font-size: 14px;
+    color: rgba(16, 91, 229, 0.86);;
+}
+
+span {
+    font-size: 16px;
+    font-weight: bold;
+}
+
+#progress-bar {
+    width: 0;
+    height: 10px;
+    background-color: rgba(16, 91, 229, 0.86);;
+    font-size: 12px;
+    border-radius: 100px;
+}
+
+.progress_container {
+    width: 80%;
+    background-color: rgb(135, 171, 236);
+    height: 10px;
+    margin: 10px auto;
+    border-radius: 100px;
+}
+
+.hidden {
+    display: none;
+    margin: 0 auto;
+}
+
+.complete {
+    width: 80%;
+    height: 50%;
+    color:rgba(16, 91, 229, 0.86);
+}
