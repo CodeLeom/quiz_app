@@ -1,105 +1,90 @@
+// // a prompt message for the user to input his or her name
+// used a while loop to ensure that if no user name is inputed, the page should not load
+let name = prompt("Please enter your name");
+while (name === "") name = prompt("Please enter your name");
+
 // dummy questions
 const questions = [
   {
-    question: 'What is the capital city of Nigeria',
-    answers: ['Lagos', 'Abia', 'Portharcourt', 'Abuja'],
-    correct: 3,
-  },
-  {
-    question: 'What is the full meaning of Lmao',
-    answers: [
-      'Lmao na 😂',
-      'Laughing my a** off',
-      'wo, e no get meaning',
-      'omo!!!',
-    ],
+    question: "what is the capital city of cameroon",
+    answers: ["Douala", "Yaounde", "Buea", "Bamenda"],
     correct: 1,
   },
   {
-    question: 'Who is your guy? According to the song',
-    answers: ['Aishat', 'Ayo', 'Spyro', 'idgaf'],
+    question: "What is the full meaning of Lmao",
+    answers: [
+      "Lmao na 😂",
+      "Laughing my a** off",
+      "wo, e no get meaning",
+      "omo!!!",
+],
+      correct: 1,
+  },
+  {
+    question: "Who is your guy? According to the song",
+    answers: ["Aishat", "Ayo", "Spyro", "idgaf"],
     correct: 2,
   },
   {
-    question: 'Who invented JavaScript?',
+    question: "What is the full meaning of DOM?",
     answers: [
-      'Brendan Eich',
-      'Yukihiro Matsumoto',
-      'Larry Wall',
-      'Guido Van Rossum',
+      "Document Object Memory",
+      "Delivery Object Market",
+      "Document Object model",
     ],
-    correct: 0,
-  },
-  {
-    question: 'What is the name of our facilitator?',
-    answers: [
-      'Hakeem Owolabi',
-      'Chizaram Anisimuo',
-      'Kyenpya Gutap',
-      'Ayodele Aransiola',
-    ],
-    correct: 3,
-  },
-  {
-    question: 'When was ES6 officially released?',
-    answers: ['May 2009', 'June 2015', 'December 1995', 'March 2000'],
-    correct: 1,
-  },
-  {
-    question: 'Which of the following is not built on JavaScript?',
-    answers: ['ReactJS', 'AngularJS', 'Perl', 'NodeJS'],
     correct: 2,
   },
   {
-    question: 'The following are tools for debugging except?',
+    question: "What is the full meaning of OOP?",
     answers: [
-      'Console Statements',
-      'Browser Developer Tools',
-      'Node.js Inspector',
-      'Alert Window',
+      "Object Oriented Paradigm",
+      "Object Oriented Programing",
+      "Object Oriented Procedure",
     ],
-    correct: 3,
-  },
-  {
-    question: 'All these are not code editors except?',
-    answers: ['JSBiddle', 'Atom', 'Sublime', 'VimEmacs'],
     correct: 1,
   },
   {
-    question:
-      'What do you call using Javascript to manipulate HTML and CSS code?',
-    answers: [
-      'Dom Manipulation',
-      'HTML Manipulation',
-      'Markdown Language',
-      'Frontend',
-    ],
+    question: "The following are examples of programing languages except",
+    answers: ["JavaScript", "Python", "C++", "Html"],
+    correct: 3,
+  },
+  {
+    question: "what is the full meaning of RAM",
+    answers: ["Read Access Memory", "Random Access Memory", "Read All Memory"],
+    correct: 1,
+  },
+  {
+    question: "What is the full meaing of pm used in time",
+    answers: ["past mid day", "post Mean Time", "post meridiem"],
+    correct: 2,
+  },
+  {
+    question: "who is the father of Christmas",
+    answers: ["Santa Claus", "the Grinch", "Frost", "the Easter bunny"],
     correct: 0,
+  },
+  {
+    question: "which company owns of Teams app",
+    answers: ["Google", "Microsoft", "Apple", "Amazon"],
+    correct: 1,
+  },
+  {
+    question: "Does this code work?",
+    answers: ["yes", "No"],
+    correct: 1,
   },
 ];
 
-// Get the user name
-let userName = (prompt('Please enter your name:'));
-
 // default value
 let currQuestion = 0;
-let newQuestion = 0;
+let currQuestionReadable = 1;
 let score = 0;
-let progress = 0;
-let track = document.querySelector('#track_questions');
-const progressBar = document.getElementById('progress-bar');
-const progressContainer = document.querySelector('.progress_container');
-const tryAgain = document.getElementById('try_again');
+let totalQuestions = questions.length;
 
 function displayQuestion() {
   // get the element of question and assign it to the questions in the array
-  document.getElementById('question').innerText =
+  document.getElementById("question").innerText =
     questions[currQuestion].question;
-
-  // this is to show the question progress
-  track.innerHTML = `Completed <span>${newQuestion}</span> out of <span>${questions.length}</span> questions.`;
-  track.style.display = 'none';
-  progressContainer.style.display = 'none';
 
   // we get the answers in the array and assign it to a variable
   const answers = questions[currQuestion].answers;
@@ -110,23 +95,10 @@ function displayQuestion() {
       (answer, index) =>
         `<button class="option" onclick=selectAnswer(${index})>${answer}</button>`
     )
-    .join('');
+    .join("");
 
-  // assign the mapped item (answeroptions) into the div "options"
-  document.getElementById('options').innerHTML = answerOptions;
-}
-
-// progress bar to show the progress of user's responses
-function updateProgressBar() {
-  progress += 10;
-  progressBar.style.width = progress + '%';
-
-  if (progress === 100) {
-    progressBar.style.width = 100 + '%';
-    document.getElementById('next').innerText = 'Check Scores';
-    alert('Progress is complete!');
-    // You can add additional actions here when progress is complete
-  }
+  // assign the mapped item (answeroptions) into the div of options
+  document.getElementById("options").innerHTML = answerOptions;
 }
 
 // check if the selected option is correct and enable the
@@ -135,57 +107,57 @@ function selectAnswer(index) {
   if (index === questions[currQuestion].correct) {
     score++;
   }
-  document.getElementById('next').disabled = false;
+  document.getElementById("next").disabled = false;
 }
 
 // go to the next question and if no more question, display the answer
-document.getElementById('next').addEventListener('click', () => {
+document.getElementById("next").addEventListener("click", () => {
   currQuestion++;
-  newQuestion++;
-  if (currQuestion < questions.length) {
-    displayQuestion();
-    updateProgressBar();
-    progressContainer.style.display = 'block';
-    track.style.display = 'block';
-    track.innerHTML = `Completed <span>${newQuestion}</span> out of <span>${questions.length}</span> questions.`;
-    
-    //disable the button until an option is selected
-    document.getElementById('next').disabled = true;
+  if (currQuestionReadable < questions.length) {
+    currQuestionReadable++;
   }
-  if (newQuestion === questions.length) {
-    document.getElementById('options').innerHTML = `<span class="complete">Quiz Completed</span>`
-    track.innerHTML = `Completed <span>${newQuestion}</span> out of <span>${questions.length}</span> questions.`;
-    document.getElementById('next').innerText = 'Check Your Score';
-    progressBar.style.width = 100 + '%';
-    document.getElementById('next').removeEventListener('click', showScores);
-    document.getElementById('next').addEventListener('click', showScores);
+  if (currQuestion < questions.length) {
+    displayProgress(currQuestionReadable, questions.length);
+    displayQuestion();
+    document.getElementById("next").disabled = true;
+  } else {
+    displayProgress(currQuestionReadable, questions.length);
+    displayScore(name, score, questions.length);
   }
 });
 
-// this is to show the scores when the Check Your Scores button is clicked
-function showScores() {
-  document.getElementById('next').disabled = true;
-  document.getElementById(
-    'result'
-  ).innerHTML = `<p>${userName}, your Total Score is: ${score}/${questions.length}</p>`;
-  tryAgain.style.display = 'block';
-  tryAgain.innerText = `Try Again`;
-  let result = score/questions.length * 100;
+// invoke the display question function
 
-  // alert window displays the user's score in percentage
-  if (result < 50) {
-    alert(`${userName}, you Scored ${result}%. Try Again. You've got this 💪`)
-  } if (result >= 50 && result <= 69) {
-    alert(`${userName}, you Scored ${result}%. Good! But you can do so much better! 👍`)
-  } if (result >= 70 && result <= 100) {
-    alert(`${userName}, you Scored ${result}%. Great Job! You are a genuis. Well done!!! 🌟✨🏆`)
+displayQuestion();
+
+function displayProgress(currQuestion, totalQuestions) {
+  document.getElementById("progress").innerHTML =
+    "question " + currQuestionReadable + " of " + totalQuestions;
+  //     if(currQuestion < totalQuestions){
+  //     currQuestion++;
+  //     displayProgress();
+  // }
+}
+displayProgress(currQuestionReadable, questions.length);
+
+function displayScore(name, score, questionsLength) {
+  if (score > 7) {
+    document.getElementById("result").innerHTML =
+      name +
+      ", You are superb! you scored " +
+      score +
+      " questions out of " +
+      questionsLength;
+  } else {
+    document.getElementById("result").innerHTML =
+      name +
+      ", Try harder, you've got this! you scored " +
+      score +
+      " questions out of " +
+      questionsLength;
   }
 }
 
-// when the try again button is clicked
-tryAgain.addEventListener('click', () => {
-  window.location.reload();
-})
 
-// invoke the display question function
-displayQuestion();
+   // !BUG next button still works even when answer button losses focus
+   // TODO add handler to disable next button when no answer is selected
