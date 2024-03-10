@@ -20,21 +20,6 @@ const questions = [
 ],
       correct: 1,
   },
-    {
-    question: 'What is the capital city of Nigeria',
-    answers: ['Lagos', 'Abia', 'Portharcourt', 'Abuja'],
-    correct: 3,
-  },
-  {
-    question: 'What is the full meaning of Lmao',
-    answers: [
-      'Lmao na 😂',
-      'Laughing my a** off',
-      'wo, e no get meaning',
-      'omo!!!',
-    ],
-    correct: 1,
-  },
   {
     question: "Who is your guy? According to the song",
     answers: ["Aishat", "Ayo", "Spyro", "idgaf"],
